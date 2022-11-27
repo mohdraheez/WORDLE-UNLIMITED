@@ -15,7 +15,6 @@ fetch('words.json')
     .then((response) => response.json())
     .then((json) => {
         word = json[rand].word;
-        console.log(word);
     });
 var array ={
         a: 0,
