@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+body{
+    background-color: #2A2438;
+    overflow:hidden;
+    margin: 0;
+}
+.title{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    background-color:#DBD8E3;
+    width: 100%;
+    height:100px;
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+}
+
+.in{
+    text-shadow: none;
+    margin:0;
+    padding:0;
+    font-size: 50px;
+    font-family: 'Allura', cursive;
+    color:#CF0A0A;
+}
+
+.TextBox{
+    display: flex;
+    width:50px;
+    height:50px;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    padding:0;
+    border: 1px solid;
+    align-items: center;
+    justify-content:center;
+}
+
+
+.rotateinput{
+    animation-name: flip;
+    animation-duration: 2s;
+    background-color:#DBD8E3;
+    color:black;
+}
+
+@keyframes flip {
+    0%{
+        transform: rotateX(360deg);
+        background-color:#DBD8E3;
+    }
+}
+
+.input{
+    outline: none;
+    border-color: #9F73AB;
+    box-shadow: 0 0 10px #9F73AB;
+}
+
+.row{
+    
+    position: relative;
+    top:140px;
+    margin-left: auto;
+    display: grid;
+    grid-auto-flow: row ;
+    grid-template-columns: repeat(5, 60px);
+    grid-row-gap:10px;
+    justify-content: center;
+    align-content: center;
+    color:white;   
+    text-align: center;
+}
+
+.wrongGuess{
+    animation-name: shake;
+    animation-duration: 1s;
+}
+
+@keyframes shake{
+    0% { transform: rotate(0deg); 
+        background-color: #CF0A0A;}
+    5% {transform: rotate(5deg);}
+    10%{transform: rotate(0deg);}   
+    15% { transform: rotate(-5deg); }
+    20%{ transform: rotate(0deg); }
+    25% {background-color: #CF0A0A;
+         transform: rotate(0deg);}
+    30% {transform: rotate(5deg);}
+    35%{transform: rotate(0deg);}   
+    40% { transform: rotate(-5deg); }
+    45%{ transform: rotate(0deg); }
+    50% {background-color: #CF0A0A;
+         transform: rotate(0deg);}
+    55% {transform: rotate(5deg);}
+    60%{transform: rotate(0deg);}   
+    65% { transform: rotate(-5deg); }
+    70%{background-color: #CF0A0A; 
+        transform: rotate(0deg); }
+    75% { transform: rotate(0deg);}
+    80% {background-color: #CF0A0A;
+        transform: rotate(5deg);}
+    85%{transform: rotate(0deg);}   
+    90% { transform: rotate(-5deg); }
+    100%{ background-color: #CF0A0A;
+        transform: rotate(0deg); }
+}
+
+.perfect{
+    background-color:#82CD47;
+    color:black;
+    animation-name:flipPerfect;
+    animation-duration: 2s;
+}
+
+.close{
+    background-color: #C69749;
+    color:black;
+    animation-name:flipclose;
+    animation-duration:2s;
+}
+
+@keyframes flipPerfect {
+    from{
+        transform: rotateX(360deg);
+        background-color:#82CD47;
+    }
+}
+
+@keyframes flipclose{
+    from{
+        transform: rotateX(360deg);
+        background-color:#C69749;
+    }
+}
+
+.popup{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top:90px;
+    font-family: 'Cinzel', serif;
+}
+
+.popupmsg,.popupmsgwhite,.popupmsgred,.popupmsggreen{
+    display: block;
+    border: 3px solid;
+    width: 250px;
+    text-align: center;
+    padding-top:1px;
+    font-size:20px;
+    margin-right: 5px;
+    border-radius: 10px;
+    animation:fadeIn 0.4s;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0% {
+         opacity: 0; 
+    }
+    100% { 
+            opacity: 1; 
+    }
+}
+
+.popupmsgred{
+    border-color:#CF0A0A;
+    color:#CF0A0A;
+}
+
+.popupmsgwhite{
+    background-color: #DBD8E3;
+    color:black;
+}
+
+.popupmsggreen{
+    background-color: #82CD47;
+    color:#DBD8E3;
+}
+
+.keyboard{
+    display:block;
+    position: relative;
+    top:170px;
+    text-align: center;
+    
+}   
+
+.Key{
+    margin:0;
+    text-align: center;
+    background-color:#DBD8E3;
+    width:50px;
+    height:60px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 8px;
+    margin-right: 2px;
+    border-radius: 5px;
+}
+
+.keypressed{
+    background-color: gray;
+}
+
+.keyclose{
+    background-color:#C69749;
+}
+
+.keyperfect{
+    background-color: #82CD47;
+}
+
+.enter{
+    width:100px;
+}
+
+.backspace{
+    width: 80px;
+    color:transparent;
+    background-image: url('backspace.png');
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+@media screen and (max-width:768px){
+    .title{
+        font-size:20px;
+    }
+
+    .in{
+        font-size:30px;
+    }
+
+    .Key{
+        width:33.5px;
+        height:50px;
+        margin: 0;
+        margin-bottom: 7px;
+        border: none;
+    }
+    .enter{
+        font-size:10px;
+        width:50px;
+    }
+    .backspace{
+        width:40px;
+    }
+
+    .row{
+        left:20px;
+    }
+    .keyboard{
+        left: 20px;
+    }
+
+    .popupmsg,.popupmsgwhite,.popupmsgred,.popupmsggreen{
+        left:15px;
+    }
+
+}
+
+.note{
+    display: flex;
+    position:absolute;
+    bottom: 0px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Cinzel', serif;
+    margin:0;
+    padding:0;
+    left:0px;
+}
+h3{
+    color: #CF0A0A;
+    margin:0;
+    text-align:center;
+}
+
