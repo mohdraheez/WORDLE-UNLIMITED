@@ -270,7 +270,7 @@ body{
 }
 
 .note{
-    display: flex;
+    display: block;
     position:absolute;
     bottom: 0px;
     width: 100%;
