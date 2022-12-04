@@ -1,0 +1,36 @@
+.row{
+    display: grid;
+    grid-auto-flow: row ;
+    grid-template-columns: repeat(3, 65px);
+    grid-row-gap:10px;
+    color:white;   
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.backspace{
+    color:transparent;
+    background-image: url('/images/backspace.png');
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+@media screen and (max-width:361px ){
+    .backspace{
+        color:transparent;
+        background-image: url('/images/backspace.png');
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width:281px){
+
+    .row{
+        grid-template-columns: repeat(3, 40px);
+        grid-row-gap:5px;
+    }
+}

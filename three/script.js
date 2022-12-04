@@ -4,8 +4,8 @@ var inputWordLength = 0;
 var inputContainer = 0;
 var correctGuess = 0;
 var wrongWord = 1;
-var rand = Math.floor(Math.random() * 8913);
-var word="words";
+var rand = Math.floor(Math.random() * 1007);
+var word="cat";
 var popupmessage = document.querySelector('.popupmessage');
 var Key = document.querySelectorAll('.Key');
 var streakcount = document.querySelector('.streakcount');
@@ -28,7 +28,7 @@ streakcount.innerText = num;
 
 
 function fetchdata(){
-     fetch('words.json')
+     fetch('words3.json')
         .then((response) => response.json())
         .then((json) => {
             word = json[rand];
@@ -50,7 +50,7 @@ function removeloader(){
 setTimeout(() => {
     document.querySelector('.loaderdiv').classList.remove('visible');
     document.querySelector('.loaderdiv').classList.add('hidden');
-},550)
+},300)
 }
 
 fetcher()
@@ -66,13 +66,13 @@ reset.addEventListener('click',(e)=>{
     
     
    if(resetkeypressed!='Enter'){
-    rand = Math.floor(Math.random() * 8913);
+    rand = Math.floor(Math.random() * 1007);
     fetcher()
     addloader();
     removeloader();
-    for(var i=0;i<30;){
+    for(var i=0;i<12;){
         for(var k=0;k<3;k++)
-        for(var j=0;j<5;j++){
+        for(var j=0;j<3;j++){
             if(textbox[i + j].innerText != "")
             textbox[i + j].innerText = "";
             textbox[i + j].classList.forEach(elem=>{
@@ -81,7 +81,7 @@ reset.addEventListener('click',(e)=>{
             textbox[i + j].classList.add('TextBox');
 
         }
-        i=i+5;
+        i=i+3;
     }
 
     for(var i=0;i<28;i++){
@@ -112,7 +112,7 @@ reset.addEventListener('click',(e)=>{
 resetkeypressed = 0;
 })
 
-fetch('words.json')
+fetch('words3.json')
     .then((response) => response.json())
     .then((json) => {
         word = json[rand];
@@ -138,21 +138,21 @@ setTimeout(() => {
         flag =0;
         var key = ekey;
             var which = ewhich;
-            if (inputWordLength != 5 && key != 'Backspace' && which >= 65 && which <= 90 && correctGuess != 5 && inputContainer <= 25) {
+            if (inputWordLength != 3 && key != 'Backspace' && which >= 65 && which <= 90 && correctGuess != 3 && inputContainer <= 9) {
                 textbox[inputContainer + inputWordLength].innerText = key;
                 textbox[inputContainer + inputWordLength].classList.add('input');
                 
                 inputWordLength++;
             }
-            if (key === 'Backspace' && inputWordLength != 0 && correctGuess != 5 && inputContainer <= 25) {
+            if (key === 'Backspace' && inputWordLength != 0 && correctGuess != 3 && inputContainer <= 9) {
                 inputWordLength--;
                 textbox[inputContainer + inputWordLength].innerText = "";
                 textbox[inputContainer + inputWordLength].classList.remove('input');
             }
     
-            if (inputWordLength === 5 && key === 'Enter' && inputContainer <= 25 && correctGuess != 5) {
+            if (inputWordLength === 3 && key === 'Enter' && inputContainer <= 9 && correctGuess != 3) {
                 var Word = '';
-                for (var j = 0; j < 5; j++) {
+                for (var j = 0; j < 3; j++) {
                     Word += textbox[inputContainer + j].innerText;
                 }
                 wrongWord = 1;
@@ -164,17 +164,17 @@ setTimeout(() => {
 
 
     async function checkForWordInList(Word) {
-        const response = await fetch("words.json");
+        const response = await fetch("words3.json");
         const json = await response.json();
-        for (var i = 1; i < 8913; i++) {
+        for (var i = 1; i < 1007; i++) {
             if (json[i] === Word.toLowerCase()) {
 
                 wrongWord = 0;
 
-                if (correctGuess != 5 && inputWordLength === 5) {
+                if (correctGuess != 3 && inputWordLength === 3) {
                     
                     correctGuess = 0;
-                    for (var i = 0; i < 5; i++) {
+                    for (var i = 0; i < 3; i++) {
                         textbox[inputContainer + i].classList.add('rotateinput');
                         var KEY =textbox[inputContainer + i].innerText.toLowerCase();
 
@@ -188,7 +188,7 @@ setTimeout(() => {
                             correctGuess++;
                         }
                         else {
-                            for (var j = 0; j < 5; j++) {
+                            for (var j = 0; j < 3; j++) {
                                 if (KEY === word[j]) {
                                     if(array[KEY]!=2)
                                         array[KEY]=1;
@@ -200,7 +200,7 @@ setTimeout(() => {
                         }
                     }
 
-                    if(inputContainer===25 && correctGuess!=5){
+                    if(inputContainer===9 && correctGuess!=3){
                         popupmessage.innerText = word;
                         popupmessage.classList.add('popupmsgwhite');
                         num=0;
@@ -208,10 +208,10 @@ setTimeout(() => {
                         streakcount.innerText = num;
                     }
                     inputWordLength = 0;
-                    inputContainer = inputContainer + 5;
+                    inputContainer = inputContainer + 3;
                 }
                  
-                if (correctGuess === 5 && flag===0) {
+                if (correctGuess === 3 && flag===0) {
                         popupmessage.innerText = "congratulations";
                         popupmessage.classList.add('popupmsggreen');
                         num = Number(num) + 1;
@@ -227,21 +227,21 @@ setTimeout(() => {
             popupmessage.innerText = "not in wordlist";
             popupmessage.classList.add('popupmsgred');
 
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 3; i++) {
                 textbox[inputContainer + i].classList.add('wrongGuess');
             }
 
             setTimeout(() => {
                 popupmessage.innerHTML = '';
                 popupmessage.classList.remove('popupmsgred');
-                for (var i = 0; i < 5; i++) {
+                for (var i = 0; i < 3; i++) {
                     textbox[inputContainer + i].classList.remove('wrongGuess');
                 }
             }, 1100);
         }
 
     }
-},550)
+},300)
 
 function keycolorchanger(k,val){
     switch(val){
@@ -384,9 +384,9 @@ var Whichkey ={
 function switcher(value){
     console.log(value)
     switch(Number(value)){
-        case 1: window.location.assign('/three/index.html');
+        case 1: window.location.assign('/four/index.html');
         break;
-        case 2: window.location.assign('/four/index.html');
+        case 2: window.location.assign('/index.html');
         break;
         case 3: window.location.assign('/six/index.html');
         break;

@@ -1,0 +1,142 @@
+.row{
+    display: grid;
+    grid-auto-flow: row ;
+    grid-template-columns: repeat(6, 65px);
+    grid-row-gap:10px;
+    color:white;   
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.backspace{
+    color:transparent;
+    background-image: url('/images/backspace.png');
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+@media screen and (max-width:361px ){
+    .backspace{
+        color:transparent;
+        background-image: url('/images/backspace.png');
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width:768px){
+    .streak{
+        right: 1.5rem;
+    }
+    .loaderdiv{
+        left:20%;
+    }
+    .row{
+        grid-template-columns: repeat(6, 50px);
+        grid-row-gap:5px;
+    }
+    .TextBox{
+        width:40px;
+        height:40px;    
+    }
+    .Key,.backspace{
+        width:36px;
+        height:55px;
+        margin-bottom: 4px;
+        border-radius: 5px;
+    }
+    
+    .enter{
+        width:51px;
+    }
+    .reset{
+        width:45px;
+    }
+}
+
+@media screen and (max-width:400px){
+    .Key,.backspace{
+        width:35px;
+        height:7vh;
+        margin-bottom: 4px;
+        border-radius: 5px;
+    }
+
+    .enter,.reset{
+        width: 50px;
+    }
+}
+
+@media screen and (max-width:376px){
+    .streak{
+        right: .5rem;
+    }
+    .Key,.backspace{
+        width:33px;
+        height:55px;
+        margin-bottom: 4px;
+        border-radius: 5px;
+    }
+    
+    .enter{
+        width:51px;
+    }
+    .reset{
+        width:45px;
+    }
+}
+
+@media screen and (max-width:361px ){
+
+    .streak{
+        right: 0.5rem;
+    }
+
+    .Key,.backspace{
+        width:32px;
+        height:55px;
+        margin-bottom: 4px;
+        border-radius: 5px;
+    }
+    .backspace{
+        color:transparent;
+        background-image: url('images/backspace.png');
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        background-position: center;
+    }
+    .enter{
+        width:51px;
+    }
+    .reset{
+        width:45px;
+    }
+}
+
+@media screen and (max-width:281px){
+
+    .row{
+        grid-template-columns: repeat(6, 40px);
+        grid-row-gap:5px;
+    }
+    .TextBox{
+        width:30px;
+        height:30px;    
+    }
+    .Key,.backspace{
+        width:24px;
+        height:55px;
+        margin-bottom: 4px;
+        border-radius: 5px;
+    }
+    
+    .enter{
+        width:35px;
+    }
+    .reset{
+        width:35px;
+    }
+}

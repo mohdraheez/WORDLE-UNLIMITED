@@ -30,6 +30,7 @@ body{
     background-color:#DBD8E3;
     color:black;
     height: 60px;
+    flex-direction: column;
 }
 .popup{
     height: 40px;
@@ -59,6 +60,14 @@ body{
     top:30%;
     visibility: hidden;
     color:white;
+}
+
+.select {
+    align-items: center;
+}
+  
+  .select:after {
+    justify-self: end;
 }
 
 .loader{
@@ -191,7 +200,7 @@ body{
 
 .backspace{
     color:transparent;
-    background-image: url('backspace.png');
+    background-image: url('images/backspace.png');
     background-repeat: no-repeat;
     background-size: 40px 40px;
     background-position: center;
@@ -251,6 +260,8 @@ body{
 .visible{
     visibility: visible;
 }
+
+
 
 @media screen and (max-width:768px){
     .streak{
@@ -312,6 +323,7 @@ body{
     .reset{
         width:45px;
     }
+    
 }
 
 @media screen and (max-width:361px ){
@@ -328,7 +340,7 @@ body{
     }
     .backspace{
         color:transparent;
-        background-image: url('backspace.png');
+        background-image: url('images/backspace.png');
         background-repeat: no-repeat;
         background-size: 40px 40px;
         background-position: center;
@@ -342,6 +354,7 @@ body{
 }
 
 @media screen and (max-width:281px){
+
 
     .row{
         grid-template-columns: repeat(5, 40px);
@@ -363,5 +376,8 @@ body{
     }
     .reset{
         width:35px;
+    }
+    .titleheading{
+        font-size: 20px;
     }
 }
