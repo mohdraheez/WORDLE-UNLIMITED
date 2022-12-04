@@ -4,7 +4,7 @@ var inputWordLength = 0;
 var inputContainer = 0;
 var correctGuess = 0;
 var wrongWord = 1;
-var rand = Math.floor(Math.random() * 5757);
+var rand = Math.floor(Math.random() * 8913);
 var word="words";
 var popupmessage = document.querySelector('.popupmessage');
 var Key = document.querySelectorAll('.Key');
@@ -31,7 +31,7 @@ function fetchdata(){
      fetch('words.json')
         .then((response) => response.json())
         .then((json) => {
-            word = json[rand].word;
+            word = json[rand];
         })
 }
 
@@ -50,7 +50,7 @@ function removeloader(){
 setTimeout(() => {
     document.querySelector('.loaderdiv').classList.remove('visible');
     document.querySelector('.loaderdiv').classList.add('hidden');
-},350)
+},550)
 }
 
 fetcher()
@@ -66,7 +66,7 @@ reset.addEventListener('click',(e)=>{
     
     
    if(resetkeypressed!='Enter'){
-    rand = Math.floor(Math.random() * 5757);
+    rand = Math.floor(Math.random() * 8913);
     fetcher()
     addloader();
     removeloader();
@@ -115,7 +115,7 @@ resetkeypressed = 0;
 fetch('words.json')
     .then((response) => response.json())
     .then((json) => {
-        word = json[rand].word;
+        word = json[rand];
 });
 
 setTimeout(() => {
@@ -166,7 +166,7 @@ setTimeout(() => {
     async function checkForWordInList(Word) {
         const response = await fetch("words.json");
         const json = await response.json();
-        for (var i = 1; i < 5757; i++) {
+        for (var i = 1; i < 8913; i++) {
             if (json[i].word === Word.toLowerCase()) {
 
                 wrongWord = 0;
@@ -241,7 +241,7 @@ setTimeout(() => {
         }
 
     }
-},350)
+},550)
 
 function keycolorchanger(k,val){
     switch(val){
