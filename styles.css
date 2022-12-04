@@ -244,6 +244,12 @@ body{
 .keyperfect{
     background-color: #82CD47;
 }
+.hidden{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
 
 @media screen and (max-width:768px){
     .streak{
