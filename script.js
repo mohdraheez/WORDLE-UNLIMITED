@@ -167,7 +167,7 @@ setTimeout(() => {
         const response = await fetch("words.json");
         const json = await response.json();
         for (var i = 1; i < 8913; i++) {
-            if (json[i].word === Word.toLowerCase()) {
+            if (json[i] === Word.toLowerCase()) {
 
                 wrongWord = 0;
 
