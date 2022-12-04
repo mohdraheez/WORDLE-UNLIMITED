@@ -1,1 +1,1 @@
-# wordle ulimited
+# wordle unlimited
