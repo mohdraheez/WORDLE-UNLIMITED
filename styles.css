@@ -36,7 +36,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    color:black;
 }
 
 .streak{
@@ -59,6 +58,7 @@ body{
     left:40%;
     top:30%;
     visibility: hidden;
+    color:white;
 }
 
 .loader{
@@ -201,7 +201,6 @@ body{
     border: 3px solid;
     width: 250px;
     text-align: center;
-    padding-top:1px;
     font-size:20px;
     margin-right: 5px;
     border-radius: 10px;
@@ -244,9 +243,11 @@ body{
 .keyperfect{
     background-color: #82CD47;
 }
+
 .hidden{
     visibility: hidden;
 }
+
 .visible{
     visibility: visible;
 }

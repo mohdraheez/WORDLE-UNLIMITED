@@ -5,7 +5,7 @@ var inputContainer = 0;
 var correctGuess = 0;
 var wrongWord = 1;
 var rand = Math.floor(Math.random() * 5757);
-var word;
+var word="words";
 var popupmessage = document.querySelector('.popupmessage');
 var Key = document.querySelectorAll('.Key');
 var streakcount = document.querySelector('.streakcount');
@@ -57,7 +57,15 @@ fetcher()
 addloader();
 removeloader();
 
-reset.addEventListener('click',()=>{
+var resetkeypressed;
+reset.addEventListener('keydown',(e)=>{
+    resetkeypressed = e.key;
+})
+
+reset.addEventListener('click',(e)=>{
+    
+    
+   if(resetkeypressed!='Enter'){
     rand = Math.floor(Math.random() * 5757);
     fetcher()
     addloader();
@@ -100,6 +108,8 @@ reset.addEventListener('click',()=>{
     inputContainer = 0;
     correctGuess = 0;
     wrongWord = 1;
+}
+resetkeypressed = 0;
 })
 
 fetch('words.json')
@@ -123,6 +133,8 @@ setTimeout(() => {
     }
 
     function keyprocessor(ekey,ewhich){
+        if(ekey==='Bs')
+            ekey = 'Backspace';
         flag =0;
         var key = ekey;
             var which = ewhich;
