@@ -380,15 +380,3 @@ var Whichkey ={
     Enter:13,
     Backspace:8
 }
-
-function switcher(value){
-    console.log(value)
-    switch(Number(value)){
-        case 1: window.location.assign('/three/index.html');
-        break;
-        case 2: window.location.assign('/index.html');
-        break;
-        case 3: window.location.assign('/six/index.html');
-        break;
-    }
-}
