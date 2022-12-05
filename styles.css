@@ -207,7 +207,7 @@ body{
     animation-duration: 2s;
 }
 
-.close{
+.closeguess{
     background-color: #FED049;
     color:black;
     animation-name:flipclose;
