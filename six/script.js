@@ -193,7 +193,7 @@ setTimeout(() => {
                                     if(array[KEY]!=2)
                                         array[KEY]=1;
                                     keycolorchanger(KEY,array[KEY]);
-                                    textbox[inputContainer + i].classList.add('close');
+                                    textbox[inputContainer + i].classList.add('closeguess');
                                 }
                             }
                             correctGuess = 0;
