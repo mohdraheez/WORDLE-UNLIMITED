@@ -201,14 +201,14 @@ body{
         transform: rotate(0deg); }
 }
 .perfect{
-    background-color:#82CD47;
+    background-color:#54B435;
     color:black;
     animation-name:flipPerfect;
     animation-duration: 2s;
 }
 
 .close{
-    background-color: #C69749;
+    background-color: #FED049;
     color:black;
     animation-name:flipclose;
     animation-duration:2s;
@@ -267,7 +267,7 @@ body{
 }
 
 .popupmsggreen{
-    background-color: #82CD47;
+    background-color: #54B435;
     color:#DBD8E3;
 }
 
@@ -276,11 +276,11 @@ body{
 }
 
 .keyclose{
-    background-color:#C69749;
+    background-color:#FED049;
 }
 
 .keyperfect{
-    background-color: #82CD47;
+    background-color: #54B435;
 }
 
 .hidden{
